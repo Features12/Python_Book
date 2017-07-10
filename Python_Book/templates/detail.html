@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block js %}
+    <script> var objectId = {{ object.id }}; </script>
+    <script src="{% static 'js/pages/detail_page.js' %}"></script>
+{% endblock %}
+
+{% block title %} Book {% endblock %}
+
+
+{% block name %}
+    <div>
+        <h2>
+            <center> {{ object.category_name }}</center>
+        </h2>
+        <hr>
+    </div>
+{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background: rgb(255, 255, 255);
+    }
+
+    h2 {
+        color: #0ac4a0;
+    }
+
+    th {
+        background-color: #0F443E;
+    }
+
+    tr {
+        color: #0ac4a0;
+    }
+
+    .btn-default {
+        color: #0ac4a0;
+    }
+
+    .button-cls {
+        position: fixed; /* Фиксированное положение */
+        left: 590px;
+        bottom: 0; /* Левый нижний угол */
+        padding: 10px; /* Поля вокруг текста */
+        background: #0F443E; /* Цвет фона */
+        color: #fff; /* Цвет текста */
+        width: 10%; /* Ширина слоя */
+    }
+
+    a {
+        color: rgb(232, 109, 38);
+    }
+
+</style>
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>
+            <center><font color="#FF7729">Свойство</font></center>
+        </th>
+        <th>
+            <center><font color="#FF7729">Описание</font></center>
+        </th>
+        <th>
+            <center><font color="#FF7729">Подробнее</font></center>
+        </th>
+    </tr>
+    </thead>
+    <tbody id="table-body">
+    {# data #}
+    </tbody>
+</table>
+
+
+{#Modal#}
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">{{ object.property_name }}</h4>
+            </div>
+            <div class="modal-body">
+                {# data #}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<button class="button-cls"><a href="{% url 'dashboard' %}"> Home </a></button>
+
+{% endblock %}

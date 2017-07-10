@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block js %}
+    <script src="{% static 'js/pages/main_page.js' %}"></script>
+{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block title %} Book {% endblock %}
+
+
+{% block name %}
+    <div>
+        <h2>
+            <center>Учебник по изучению языка программирования "Python"</center>
+        </h2>
+        <hr>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <style>
+    body  {
+	background: #0F443E;
+}
+        h2 {
+            color: #f5fff8;
+        }
+        h6 {
+            color: #0affda;
+        }
+
+        hr{
+            height: 2px;
+        }
+
+        .col-md-4 {
+            border: 10px solid #0ac4a0;
+            padding: 10px;
+            width: 400px;
+            height: 130px;
+            margin: 15px;
+            left: 150px;
+            color: rgba(245, 255, 248, 0.99);
+        }
+    .col-md-4:hover {
+  background: rgb(232, 109, 38);
+}
+    </style>
+
+    <div class="container">
+        <div class="row">
+                {#data from cript#}
+            </div>
+        </div>
+        <hr>
+
+{#<font color="#fffff>">&copy; Hello world</font>#}
+
+    <nav id="bt-menu" class="bt-menu">
+			<a href="#" class="bt-menu-trigger"><span>Menu</span></a>
+			<ul>
+				<li><a href="http://www.twitter.com/pcvector" class="bt-icon icon-twitter">Twitter</a></li>
+				<li><a href="https://plus.google.com/" class="bt-icon icon-gplus">Google+</a></li>
+				<li><a href="http://www.facebook.com/" class="bt-icon icon-facebook">Facebook</a></li>
+				<li><a href="https://github.com" class="bt-icon icon-github">GitHub</a></li>
+			</ul>
+    </nav>
+
+    <script>
+
+</script>
+    <script src="../static/js/animated_border_menus/js/classie.js"></script>
+    <script src="../static/js/animated_border_menus/js/borderMenu.js"></script>
+
+
+
+{% endblock %}
